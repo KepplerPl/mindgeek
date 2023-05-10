@@ -48,7 +48,7 @@ class TestController extends AbstractController
         $latestInFeedTimestamp = strtotime($records['generationDate']);
 
         if ($latestInDatabaseTimestamp > $latestInFeedTimestamp) {
-//            return new Response("No new data");
+            return new Response("No new data");
         }
 
         $count = 0;
@@ -68,7 +68,7 @@ class TestController extends AbstractController
             }
 
             $count++;
-            if ($count > 1000) {
+            if ($count > 100) {
                 break;
             }
         }
